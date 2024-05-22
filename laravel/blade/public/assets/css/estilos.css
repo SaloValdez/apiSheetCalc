@@ -1,0 +1,33 @@
+ul{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    /* background-color: aqua; */
+    margin: 0px;
+    padding: 0px;
+}
+
+li{
+    /* border: 1px solid blue ; */
+    list-style: none;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    /* background-color: blue; */
+   
+}
+a{
+    /* border: 1px solid green; */
+   display: block;
+   text-decoration: none;
+   text-align: center;
+   padding: 8px;
+   background-color: salmon;
+
+   color: beige;
+
+}
+a:hover{
+    background-color: rgb(249, 106, 90);
+    cursor: pointer;
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-language" content="en-us">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="modal" id="modal">
+      
+        <div class="contenidoModal">
+           
+           <div class="cabecera-modal">
+            <div class="contenedor-cerrar"><div id="btnCerrarModal"class="btn-cerrar">X</div></div>
+            <h4>DATOS DE ACTA DIGITAL</h4>
+        </div>
+           <div class="body-modal">
+            <form action="#" id="formModal">
+                    <label for="">fecha</label><br>
+                    <input type="text" name ="fecha-modal" id="fecha-modal" value="2024-03-01" maxlength="" >
+                    <label for="">SOT</label><br>
+                    <input type="text" name="sot-modal" id="sot-modal" value="" maxlength="8" >
+                    <label for="">Nombres de cliente</label><br>
+                    <input type="text" name="nombres-modal" id="nombres-modal" value="" maxlength="" >
+                    <label for="">Direccion de cliente</label><br>
+                    <input type="text" name="direccion-modal" id="direccion-modal" value="" maxlength="" >
+
+                    <label for="">Dni cliente</label><br>
+                    <input type="text" name="dni-modal" id="sot-modal" value="" maxlength="8" >
+                    <label for="">Codigo cliente</label><br>
+                    <input type="text" name="codigo-modal" id="sot-modal" value="04045678" maxlength="8" >
+                    <label for="">Plano</label><br>
+                    <input type="text" name="plano-modal" id="sot-modal" value="0PUAZ011-F" maxlength="" >
+                    <label for="">Cintillo</label><br>
+                    <input type="text" name="cintillo-modal" id="sot-modal" value="6069678" maxlength="7" >
+                    <label for="">N° Fat</label><br>
+                    <input type="text"  name="fat-modal"id="sot-modal" value="23" maxlength="8" > 
+                    <label for="">N° Borne</label><br>
+                    <input type="text" name="borne-modal" id="sot-modal" value="2" maxlength="8" > 
+
+                    <label for="">Tipo actividad</label><br>
+                    <div class="contenedor-radio">
+                      <div class="inputGroup">
+                        <input id="radio1" name="radio" value="insta" type="radio"/>
+                        <label for="radio1">INSTALACION</label>
+                      </div>
+                      <div class="inputGroup">
+                        <input id="radio2" name="radio" value="manto" type="radio"/>
+                        <label for="radio2">MANTENIMIENTO</label>
+                      </div>
+                      <div class="inputGroup">
+                        <input id="radio3" name="radio" value="post" type="radio"/>
+                        <label for="radio3">POST VENTA</label>
+                      </div>
+                    </div>
+
+
+
+                </form>
+
+
+               
+           </div>
+           <div class="footer-modal">
+            <button   class="cerrarModal" id="cerrarModal">CREAR ACTA</button>
+
+            <!-- <input type="submit" class="cerrarModal" id="cerrarModal" value="EJECUTAR"> -->
+           </div>
+        </div>
+
+   </div>
+
+    <div class="contenedor">
+        <div class="menu">
+                <img src="./img/barra-menu.png" alt="">
+        </div>
+
+        <div class="data">
+            <div class="titulo">
+                <div class="sidervar">
+                        <div class="linea"></div>
+        
+                </div>
+
+
+
+                <div class="detalle-sot">
+                    <div class="sot">
+                        <div class="numero-sot">
+                            <span class="letra-sot">SOT</span>
+                            <input id="sotInicio"  type="text" placeholder="Click aqui..." maxlength="8" class="resultado_inicio"> 
+                            <span class="iniciado">Iniciado</span>
+                        </div>
+                        <!-- <br> -->
+                        <div class="dni-cliente">
+                          <div class="cont-dni">  <input type="text" id="dni-cliente" placeholder="click aqui..." maxlength="8" class="resultado-input inicio-dni" value=""> <span>| Vs: 2.3.6. </span></div>
+                            <span class="paso">Paso 3 de 4</span>
+                        </div>
+                    </div>
+                    <div class="iconos-sot">
+                        <img src="./img/icono-foto.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="avance">
+                 <div class="icono-avance">
+                    <img src="./img/icono-avance.png" alt="">
+                 </div>       
+                 <div class="texto-avance">
+                    <p>Paso 3: Acta de servicio técnico</p>
+                 </div>  
+            </div>
+            <div class="contenedor-datos">
+            <div class="datos">
+                <div class="datos-cabecera">
+                    <p class="subtitulo">Información del servicio</p>
+                    <div class="custom-select" >
+                        <select id="trabajoo" name="cbx-tipo-trabajo">
+                          <option value="0">INSTALACIÓN</option>
+                          <option value="1">MANTENIMINETO</option>
+                          <option value="2">POST VENTA</option>
+                        </select>
+                      </div>
+                    
+
+
+
+                      
+
+
+
+               </div>
+                
+               <div class="info-date">
+                    <div class="caja-fecha">
+                        <p class="texto-basico">Fecha: </p>
+                        <input type="text" id="fecha-cliente" class="resultado-input resultado-fecha texto-basico " value="2024-03-29">
+                        <!-- <input class="fecha" type="date" data-date-format="YYYY MMMM DD" value="2025-02-25" > -->
+                    </div>
+
+                    <div class="hora texto-basico" ><div>Hora inicio de  Acta:10:12:50</div></div>
+                </div>
+                <div class="linea-datos"></div>
+                 <h4>Datos personlaes del cliente</h1>
+                
+                    <p class="subtitulo">
+                        Nombre y Apellido:
+                    </p>
+                    <p class="resultado">
+                        <input type="text" id="nombre-cliente" placeholder="click aqui..."  class="resultado-input resultado input-2" value="">
+                        
+                    </p>
+                    <p class="subtitulo">
+                        Número de teléfono:
+                    </p>
+                    <p class="resultado">
+                        -
+                    </p>
+                    <p class="subtitulo">
+                        Dirección:
+                    </p>
+                    <p class="resultado resultado-textarea">
+                        <textarea  class="resultado-input resultado txt-direccion-cliente" name="" id="direccion-cliente" cols="0" rows="0">
+
+                        </textarea>
+                        <!-- <input type="text" id="direccion-cliente" class="resultado-input resultado txt-direccion-cliente" value="AV. SIMON BOLIVAR #233 -70.9999999,-40.233445442"> -->
+                    </p>
+
+                    <p class="subtitulo">
+                        Código de cliente:
+                    </p>
+                    <p class="resultado">
+                        <input type="text" id="codigo-cliente" class="resultado-input resultado" value="AV. SIMON BOLIVAR #233 -70.9999999,-40.233445442">
+                    </p>
+                    <h4 class="titulo-negrita">¿Quién te atendió al realizar la visita?</h1>
+                        <p class="resultado resultado-negrita">
+                            Titular
+                        </p>
+
+                        <h4 class="titulo-negrita">Datos de la atención</h1>
+                            
+                    <div class="datos-atencion resultado resultado-negrita">
+                        <div class="cont-dato">
+                            <p class="subtitulo">
+                                SOT:
+                            </p>
+                            <p class="resultado">
+                                <input type="text" id="sotFinal" class="resultado-input resultado" value="234556677">
+                            </p>
+                        </div>
+                        <div class="cont-dato">
+                            <p class="subtitulo">
+                                Número de cintillo:
+                            </p>
+                            <p class="resultado">
+                                <input type="text" id="cintillo-cliente" class="resultado-input resultado">
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="datos-atencion resultado resultado-negrita">
+                        <div class="cont-dato">
+                            <p class="subtitulo">
+                                Plano:
+                            </p>
+                            <p class="resultado">
+                                <input type="text" id="plano-cliente" class="resultado-input resultado" value="0PUAZ011-F">
+                            </p>
+                        </div>
+                        <div class="cont-dato">
+                            <p class="subtitulo">
+                                FAT:
+                            </p>
+                            <p class="resultado">
+                                <input type="text" id="fat-cliente" class="resultado-input resultado" value="34">
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="datos-atencion resultado resultado-negrita">
+                        <div class="cont-dato">
+                            <p class="subtitulo">
+                                Hora inicio de SOT
+                            </p>
+                            <p class="resultado">
+                                18:28:58
+                            </p>
+                        </div>
+                        <div class="cont-dato">
+                            <p class="subtitulo">
+                                N° Borne:
+                            </p>
+                            <p class="resultado">
+                                <input type="text"  id="borne" class="resultado-input resultado" value="3">
+                            </p>
+                        </div>
+                    </div>
+
+                    
+            </div>
+
+
+        </div>
+
+
+
+           
+
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>

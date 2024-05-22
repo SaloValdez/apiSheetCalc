@@ -1,0 +1,681 @@
+
+
+@font-face{
+    font-family: 'bold';
+    src: url('./font/araboto/ArabotoBold.ttf');
+}
+
+@font-face{
+    font-family: 'ArabotoNormal';
+    src: url('./font/araboto/ArabotoNormal.ttf');
+}
+
+@font-face{
+    font-family: 'ArabotoLight';
+    src: url('./font/araboto/ArabotoLight.ttf');
+}
+
+@font-face{
+    font-family: 'ArabotoThin';
+    src: url('./font/araboto/ArabotoThin.ttf');
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+body{
+    font-family: 'ArabotoNormal';
+}
+
+
+.contenedor{
+    /* border: 1px solid red; */
+    width: 2928px;
+    /* height:3904px ; */
+    display:block;
+    /* display: none; */
+    display:flex;
+    z-index: 40;
+}
+
+.contenedorCanvas canvas{
+    width: 150px !important;
+    height: 150px !important;
+}
+
+.btnIndicaciones,.btnIndicacionesCerrar{
+    background-color: #dddbdb;
+    color: navy;
+    padding: 3px 10px;
+   
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnIndicaciones:hover,.btnIndicacionesCerrar:hover{
+    background-color: rgb(146, 146, 146);
+}
+
+
+
+.desarrollo-indicaciones{
+    display: none;
+}
+
+ol{
+    margin: 10px;
+    padding: 10px 25px;
+    background-color: #c9c9c9;
+    border-radius: 5px;
+    /* font-weight: lighter; */
+    font-family: 'ArabotoLight';
+    font-size: 13px;
+}
+ol span {
+    color: rgb(58, 3, 255);
+}
+
+/* -----INICIO modal */
+                    .modal{
+                        position:absolute;
+                        background-color: #000000cb;
+                        width: 100%;
+                        height: 100%;
+                        backdrop-filter: blur(4px);
+                        z-index: 20;
+                    /* display: none; */
+                        position: fixed;
+                    
+                    
+                    }
+                    
+                    
+                    .cerrar-modal{
+                        display: none;
+                    }
+                    .contenidoModal{
+                        /* background-color: #ffffff; */
+                        width: 50%;
+                        margin: auto;
+                        margin-top: 20px;
+                        /* padding: 15px; */
+                        /* border-radius: 10px; */
+                    }
+                    
+                    .modal .cabecera-modal{
+                        background-color: #dddbdb;
+                        border-radius: 10px 10px 0px 0px;
+                        padding: 25px 10px 25px 10px;
+                        text-align: center;
+                    }
+                    .modal .body-modal{
+                        background-color: #ffffff;
+                        padding: 10px;
+                        overflow-x: hidden;
+                        overflow-y: scroll;
+                        height: 430px;
+                        
+                    }
+                    
+                    .modal .footer-modal{
+                        background-color: #dddbdb;
+                        border-radius: 0px 0px 10px 10px;
+                        padding: 25px 10px 25px 10px;
+                        /* text-align: center; */
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        text-align: center;
+                    }
+                    
+                    .body-modal label{
+                        padding-bottom: 10px !important;
+                        /* background-color: yellow; */
+                        font-size: 15px;
+                        color: #696969;
+                    }
+                    .contenidoModal input[type=text]{
+                        width: 100%;
+                        padding: 5px 3px 3px 3px;
+                        border-radius: 3px;
+                        border: 1px solid #9b9999;
+                        font-size: 18px;
+                        text-transform:uppercase;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .modal form{
+                        margin-top: 20px;
+                        color: black;
+                    }
+
+                    .modal select{
+                        font-weight: bold;
+                        width: 300px;
+                    }
+                    
+                    .contenedor-cerrar{
+                        /* background-color: #232424; */
+                        display: flex;
+                        justify-content: end;
+                    }
+                    .btn-cerrar{
+                        background-color: #3c454c;
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 25px;
+                        cursor: pointer;
+                        color: #f3f3f3;
+                        padding-top: 2px;
+                        margin-top: -15px;
+                    }
+                    .btn-cerrar:hover{
+                        background-color: #9b9999;
+                    }
+                    .modal button{
+                        width: 200px;
+                        padding: 10px;
+                        font-size: 21px;
+                        margin: auto;
+                        margin-bottom: 20px;
+                        /* background-color: #9b9999;  */
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                    
+                    .modal .contSot{
+                        display: flex;
+                        /* background-color: yellowgreen;
+                        border: 1px solid rebeccapurple; */
+                       justify-content: center;
+                       margin-top: 5px;
+                       color: #727272;
+                    }
+                    .modal .txtSotGenerando{
+                        text-align: center;
+                        width: 120px !important;
+                        height: 22px !important;
+                        background-color: #cfcfcf;
+                        display: flex;
+                        color: #727272;
+
+                    }
+                    .app{
+                        display: flex;
+                       margin-top: 4px;
+                    }
+                    .app img{
+                        width: 30px;
+                        height:30px ;
+                    }
+
+                    .app div{
+                        width: 80px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content:space-around;
+                        text-align: center;
+                        /* border: 1px solid rgb(9, 104, 24); */
+                    }
+
+                    .app div div{
+                       
+                        /* border: 2px solid blue; */
+                        margin-left: 25px;
+                    }
+                   
+/* ------FIN modal */
+   
+
+   /* .contenedorCanvas{
+   
+   } */
+
+
+
+select{
+    padding: 5px ;
+    width: 210px;
+    /* background-color: yellow; */
+    margin: 5px;
+}
+
+
+
+
+/* INICIO __________DP 16  SERIE*/
+
+.contenedor_dp16{
+    position: relative;
+    display:inline-flex;
+    
+  
+    
+}
+.contenedor_dp16 .contenedor_img_sot_dp16 {
+    position: absolute;
+    /* border: 1px solid red; */
+    z-index: 10;
+    bottom: 690px;
+    /* left: 500px; */
+    left: 617px;
+    transform: rotate(1deg);
+}
+
+
+
+
+.contenedor_dp16 .contenedor_img_sot_dp16 img{
+    height: 34px;
+    /* width: 20px; */
+    /* -webkit-filter: grayscale(1);
+    filter: grayscale(); */
+}
+
+.contenedor_img_fecha{
+    /* border: 1px solid red; */
+    position: absolute;
+    /* border: 1px solid red; */
+    z-index: 10;
+    bottom: 930px;
+    /* left: 500px; */
+    left: 212px;
+    transform: rotate(1deg);
+}
+
+.contenedor_img_hora{
+    position: absolute;
+    /* border: 1px solid red; */
+
+    z-index: 10;
+    bottom: 800px;
+    /* left: 500px; */
+    left: 212px;
+}
+.contenedor_img_hora_inicio{
+    position: absolute;
+    /* border: 1px solid red; */
+
+    z-index: 10;
+    bottom: 210px;
+    /* left: 500px; */
+    right: 132px;
+}
+
+.contenedor_img_hora_inicio img{
+    height: 28px;
+    width: 15px;
+}
+.contenedor_img_fecha_inicio{
+    position: absolute;
+    /* border: 1px solid rgb(14, 214, 74); */
+
+    z-index: 10;
+    bottom: 165px;
+    /* left: 500px; */
+    right: 132px;
+}
+
+.contenedor_img_fecha_inicio img{
+    height: 28px;
+    width: 15px;
+}
+
+
+/* FIN DP __________16  SERIE*/
+
+
+
+
+
+
+/* INICIO __________DP 15  SERIE*/
+
+        .contenedor_dp15_serie{
+            position: relative;
+            display:inline-flex;
+            
+          
+            
+        }
+        .contenedor_dp15_serie .contenedor_img_sot_dp15 {
+            position: absolute;
+            /* border: 1px solid red; */
+            z-index: 10;
+            bottom: 140px;
+            left: 250px;
+        }
+
+
+        .contenedor_dp15_serie .contenedor_dp15 img{
+            width: 1200px;
+            height: 1500px;
+        
+
+        }
+
+        .contenedor_dp15_serie .contenedor_img_sot_dp15 img{
+            height: 200px;
+            width: 100px;
+        }
+
+/* FIN DP __________15  SERIE*/
+
+/*INICIO __________DP 15  niveles*/
+        .contenedor_dp15_niveles{
+            position: relative;
+            display:inline-flex;
+        }
+
+        .contenedor_dp15_niveles .contenedor_img_sot_dp15 {
+            position: absolute;
+            /* border: 1px solid red; */
+            z-index: 10;
+            bottom: 240px;
+            left: 255px;
+        }
+
+
+        .contenedor_dp15_niveles .contenedor_dp15 img{
+            width: 1200px;
+            height: 1600px;
+        
+
+        }
+
+        .contenedor_dp15_niveles .contenedor_img_sot_dp15 img{
+            height: 175px;
+            width: 85px;
+        }
+/* FIN __________DP 15  niveles*/
+
+
+
+
+/*INICIO __________DP17  2.4 BASICO*/
+        .contenedor_dp17_2_4_basico{
+            position: relative;
+            display:inline-flex;
+          
+        }
+
+        .contenedor_dp17_2_4_basico .contenedor_img_sot_dp15 {
+            position: absolute;
+            /* border: 1px solid red; */
+            z-index: 10;
+            bottom: 130px;
+            left: 220px;
+        }
+
+
+        .contenedor_dp17_2_4_basico .contenedor_dp15 img{
+            width: 1200px;
+            height: 1600px;
+
+
+        }
+
+        .contenedor_dp17_2_4_basico .contenedor_img_sot_dp15 img{
+            height: 170px;
+            width: 95px;
+        }
+/* FIN __________DP17  2.4 BASICO*/
+
+/*INICIO __________DP17  2.4 AVANZADO*/
+        .contenedor_dp17_2_4_avanzado{
+            position: relative;
+            display:inline-flex;
+        }
+
+        .contenedor_dp17_2_4_avanzado .contenedor_img_sot_dp15 {
+            position: absolute;
+            /* border: 1px solid red; */
+            z-index: 10;
+            bottom: 170px;
+            left: 185px;
+        }
+
+
+        .contenedor_dp17_2_4_avanzado .contenedor_dp15 img{
+            width: 1200px;
+            height: 1600px;
+
+
+        }
+
+        .contenedor_dp17_2_4_avanzado .contenedor_img_sot_dp15 img{
+            height: 180px;
+            width: 100px;
+        }
+/* FIN __________DP17  2.4 AVANZADO*/
+
+/*INICIO __________DP17  5g basico*/
+        .contenedor_dp17_5g_basico{
+            position: relative;
+            display:inline-flex;
+        }
+
+        .contenedor_dp17_5g_basico .contenedor_img_sot_dp15 {
+            position: absolute;
+            /* border: 1px solid red; */
+            z-index: 10;
+            bottom: 150px;
+            left: 175px;
+        }
+
+
+        .contenedor_dp17_5g_basico .contenedor_dp15 img{
+            width: 1200px;
+            height: 1600px;
+
+
+        }
+
+        .contenedor_dp17_5g_basico .contenedor_img_sot_dp15 img{
+            height: 180px;
+            width: 100px;
+}
+/* FIN __________DP17  5g basico*/
+
+/*INICIO __________DP17  5g avanzado*/
+        .contenedor_dp17_5g_avanzado{
+            position: relative;
+            display:inline-flex;
+        }
+
+        .contenedor_dp17_5g_avanzado .contenedor_img_sot_dp15 {
+            position: absolute;
+            /* border: 1px solid red; */
+            z-index: 10;
+            bottom: 150px;
+            left: 235px;
+        }
+
+
+        .contenedor_dp17_5g_avanzado .contenedor_dp15 img{
+            width: 1200px;
+            height: 1600px;
+
+
+        }
+
+        .contenedor_dp17_5g_avanzado .contenedor_img_sot_dp15 img{
+            height: 190px;
+            width: 105px;
+        }
+/* FIN __________DP17  5g avanzado*/
+
+
+/*INICIO __________DP01*/
+        .contenedor_dp01{
+            position: relative;
+            display:inline-flex;
+        }
+
+        .contenedor_dp01 .contenedor_img_sot_dp15 {
+            position: absolute;
+            /* border: 1px solid red; */
+            z-index: 10;
+            bottom: 600px;
+            left: 265px;
+        }
+
+
+        .contenedor_dp01 .contenedor_dp15 img{
+            width: 1200px;
+            height: 1600px;
+
+
+        }
+
+        .contenedor_dp01 .contenedor_img_sot_dp15 img{
+            height: 60px;
+            width: 45px;
+            /* backdrop-filter: blur(200px); */
+        }
+/* FIN _____________DP01*/
+
+
+/*INICIO __________DP03*/
+        .contenedor_dp03{
+            position: relative;
+            display:inline-flex;
+        }
+
+        .contenedor_dp03 .contenedor_img_sot_dp15 {
+            position: absolute;
+            /* border: 1px solid red; */
+
+            transform: rotate(3deg);
+            z-index: 10;
+            bottom: 360px;
+            left: 210px;
+            /* background-color: red; */
+        }
+
+
+        .contenedor_dp03 .contenedor_dp15 img{
+            width: 1200px;
+            height: 1600px;
+            border: 43px solid green;
+
+
+        }
+
+        .contenedor_dp03 .contenedor_img_sot_dp15 img{
+            height: 70px;
+            width: 49px;
+            /* backdrop-filter: blur(200px); */
+        }
+/* FIN _____________DP03*/
+
+/*INICIO __________DP41*/
+        .contenedor_dp40{
+            position: relative;
+            display:inline-flex;
+        }
+
+        .contenedor_dp40 .contenedor_img_sot_dp15 {
+            position: absolute;
+            /* border: 1px solid red; */
+
+            transform: rotate(6deg);
+            z-index: 10;
+            bottom: 150px;
+            left: 110px;
+        }
+
+
+        .contenedor_dp40 .contenedor_dp15 img{
+            width: 1200px;
+            height: 1600px;
+
+
+        }
+
+        .contenedor_dp40 .contenedor_img_sot_dp15 img{
+            height: 100px;
+            width: 58px;
+            /* backdrop-filter: blur(200px); */
+        }
+/* FIN _____________DP41*/
+
+/*INICIO __________DP40*/
+        .contenedor_dp41{
+            position: relative;
+            display:inline-flex;
+        }
+
+        .contenedor_dp41 .contenedor_img_sot_dp15 {
+            position: absolute;
+            /* border: 1px solid red; */
+
+            transform: rotate(3deg);
+            z-index: 10;
+            bottom: 150px;
+            left: 280px;
+        }
+
+
+        .contenedor_dp41 .contenedor_dp15 img{
+            width: 1200px;
+            height: 1600px;
+
+
+        }
+
+        .contenedor_dp41 .contenedor_img_sot_dp15 img{
+            height: 150px;
+            width: 72px;
+            /* backdrop-filter: blur(200px); */
+        }
+/* FIN _____________DP40*/
+
+
+/*INICIO __________DP27*/
+        .contenedor_dp27{
+            position: relative;
+            display:inline-flex;
+        }
+
+        .contenedor_dp27 .contenedor_img_sot_dp15 {
+            position: absolute;
+            /* border: 1px solid red; */
+
+            transform: rotate(-2deg);
+            z-index: 10;
+            bottom: 140px;
+            left:310px;
+        }
+
+
+        .contenedor_dp27 .contenedor_dp15 img{
+            width: 1200px;
+            height: 1600px;
+
+
+        }
+
+        .contenedor_dp27 .contenedor_img_sot_dp15 img{
+            height: 160px;
+            width: 83px;
+            /* backdrop-filter: blur(200px); */
+        }
+/* FIN _____________DP27 */
+
+   @media (min-width: 0px) and (max-width: 800px) {
+    .contenidoModal{
+        /* background-color: #ffffff; */
+        width: 90%;
+        height: 100%;
+     
+    }
+   }

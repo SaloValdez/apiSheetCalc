@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Reporte Fotos</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery/jquery.min.js"></script>
+    
+    <script src="./js/canvasCapture/canvasCapture.min.js"></script>
+    <!-- <script src="./js/captura.js"></script> -->
+</head>
+<body>
+
+
+    <div class="modal" id="modal">
+        <div class="contenidoModal">
+           <div class="cabecera-modal">
+            <div class="contenedor-cerrar"><div id="btnCerrarModal"class="btn-cerrar">X</div></div>
+            <h4>DATOS DE ACTA DIGITAL</h4>
+            <div class="contSot">
+               Sot Trabajado:  <input id="txtSotGenerando"  class="txtSotGenerando" type="text" value="">
+            </div>
+        </div>
+           <div class="body-modal">
+
+
+
+            <span class="btnIndicaciones" id="btnIndicaciones"><strong>Indicaciones</strong> <i>Click aqui</i></span>
+
+            <div class="desarrollo-indicaciones" id="desarrollo-indicaciones">
+                 <span class="btnIndicacionesCerrar" id="btnIndicacionesCerrar"><strong>Ocultar</strong> Indicaciones <i>Click aqui</i></span>
+                 <ol type="1"> 
+                  
+                        <li>Digitar SOT
+                        <li>Seleccionar tipo trabajo
+                        <li>Seleccionar foto(s) a generar
+                        <li>Hacer click en "Generar Reporte"
+                        <ul>...Nombre imagen descarga <span> &#60; tipoDp_sot.png &#62;</span> </ul>
+                        <br>
+                        <strong>Aplicaciones para su uso:</strong>
+                        <div class="app">
+                            <div>
+                                <i>Varias Cuentas</i>
+                               <div> 
+                                 <img src="./img/reportes/varias_cuentas.png" alt="">
+                               </div>
+                            </div>
+                            <div>
+                                <i>Gallery Camera</i>
+                                <div>
+                                    <img src="./img/reportes/gallery_camera.png" alt="">
+                                </div>
+                            </div>
+                            <div>
+                                <i>Apk Salesy Fotos</i>
+                                <div>
+                                    <img src="./img/reportes/salesy.jpeg" alt="">
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                 </ol> 
+            </div>
+
+
+
+
+
+
+                    <form action="#" id="formModal">
+                            <label for="">Ingrese SOT</label><br>
+                            <input type="text" name ="sotReporte" id="sotReporte" value="" maxlength="8" >
+                            <div class="contenedor-select">
+                                <select class="tipoTrabajo"  name="" id="tipoTrabajo">
+                                    <option value="0">Seleccione tipo trabajo</option>
+                                    <option value="insta">Instalación</option>
+                                    <option disabled="disabled" value="post">Post Venta</option>
+                                    <option disabled="disabled" value="manto">Mantenimiento</option>
+                                </select>
+
+                                <select class="DpFotos"  name="" id="DpFotos">
+                                    <option value="0">..........</option>
+                                </select>
+                            </div>
+                    </form>
+
+                    <div class="contenedorCanvas" id="contenedorCanvas"></div>
+           </div>
+           <div class="footer-modal">
+            <button   class="" id="btnGenerarReporte">Generar Reporte</button>
+            <a href="https://salovaldez.github.io/actaDigitalSalo.github.io/" target="_blank">Generar Acta Digital</a>
+
+            <!-- <input type="submit" class="cerrarModal" id="cerrarModal" value="EJECUTAR"> -->
+           </div>
+        </div>
+
+   </div>
+
+
+
+   <div class="contenedor_dp16" id="contenedor_dp16">
+    <div class="contenedor_img_fecha">
+        <img id="numero1_cmd_fecha" src="" alt="">
+        <img id="numero2_cmd_fecha" src="" alt="">
+
+        <img id="numeross5_cmd_fecha" src="./img/reportes/numerosDp16/slash.png" alt="">
+
+        <img id="numero3_cmd_fecha" src="" alt="">
+        <img id="numero4_cmd_fecha" src="" alt="">
+
+        <img id="numero5333_cmd_fecha" src="./img/reportes/numerosDp16/slash.png" alt="">
+
+        <img id="numero5_cmd_fecha" src="" alt="">
+        <img id="numero6_cmd_fecha" src="" alt="">
+        <img id="numero7_cmd_fecha" src="" alt="">
+        <img id="numero8_cmd_fecha" src="" alt="">
+    </div>
+    
+    <div class="contenedor_img_hora">
+        <img id="hora_cmd_numero1" src="" alt="">
+        <img id="hora_cmd_numero2" src="" alt="">
+        <img id="hora_cmd_numero3" src="./img/reportes/numerosDp16/dosPuntos.png" alt="">
+        <img id="hora_cmd_numero4" src="" alt="">
+        <img id="hora_cmd_numero5" src="" alt="">
+    </div>
+
+    <div class="contenedor_img_sot_dp16">
+        <img id="sot-numero1-dp16_serie" src="" alt="">
+        <img id="sot-numero2-dp16_serie" src="" alt="">
+        <img id="sot-numero3-dp16_serie" src="" alt="">
+        <img id="sot-numero4-dp16_serie" src="" alt="">
+        <img id="sot-numero5-dp16_serie" src="" alt="">
+        <img id="sot-numero6-dp16_serie" src="" alt="">
+        <img id="sot-numero7-dp16_serie" src="" alt="">
+        <img id="sot-numero8-dp16_serie" src="" alt="">
+    </div>
+
+    <div class="contenedor_img_hora_inicio">
+        <img id="numero1-hora_inicio" src="" alt="">
+        <img id="numero2-hora_inicio" src="" alt="">
+        <img id="numero3-hora_inicio" src="./img/reportes/numerosDp16/hora/hDosPuntos.png" alt="">
+        <img id="numero4-hora_inicio" src="" alt="">
+        <img id="numero5-hora_inicio" src="" alt="">
+    </div>
+    <div class="contenedor_img_fecha_inicio">
+        <img id="numero1-fecha-inicio" src="" alt="">
+        <img id="numero2-fecha-inicio" src="" alt="">
+        <img id="numero3w-fecha-inicio" src="./img/reportes/numerosDp16/hora/hSlash.png" alt="">
+        <img id="numero3-fecha-inicio" src="" alt="">
+        <img id="numero4-fecha-inicio" src="" alt="">
+        <img id="numero444-fecha-inicio" src="./img/reportes/numerosDp16/hora/hSlash.png" alt="">
+        <img id="numero5-fecha-inicio" src="" alt="">
+        <img id="numero6-fecha-inicio" src="" alt="">
+        <img id="numero7-fecha-inicio" src="" alt="">
+        <img id="numero8-fecha-inicio" src="" alt="">
+    </div>
+
+
+
+    <img src="./img/reportes/dp16.png" alt="">
+ </div>
+
+ 
+
+
+
+
+    <div class="contenedor_dp15_serie" id="contenedor_dp15_serie">
+        <div class="contenedor_img_sot_dp15">
+            <img id="sot-numero1-dp15_serie" src="" alt="">
+            <img id="sot-numero2-dp15_serie" src="" alt="">
+            <img id="sot-numero3-dp15_serie" src="" alt="">
+            <img id="sot-numero4-dp15_serie" src="" alt="">
+            <img id="sot-numero5-dp15_serie" src="" alt="">
+            <img id="sot-numero6-dp15_serie" src="" alt="">
+            <img id="sot-numero7-dp15_serie" src="" alt="">
+            <img id="sot-numero8-dp15_serie" src="" alt="">
+           
+        </div>
+        <img src="./img/reportes/DP15_serie.jpeg" alt="">
+     </div>
+
+
+     <div class="contenedor_dp15_niveles" id="contenedor_dp15_niveles">
+        <div class="contenedor_img_sot_dp15">
+            <img id="sot-numero1-dp15_niveles" src="" alt="">
+            <img id="sot-numero2-dp15_niveles" src="" alt="">
+            <img id="sot-numero3-dp15_niveles" src="" alt="">
+            <img id="sot-numero4-dp15_niveles" src="" alt="">
+            <img id="sot-numero5-dp15_niveles" src="" alt="">
+            <img id="sot-numero6-dp15_niveles" src="" alt="">
+            <img id="sot-numero7-dp15_niveles" src="" alt="">
+            <img id="sot-numero8-dp15_niveles" src="" alt="">
+        </div>
+        <img src="./img/reportes/dp15_niveles.jpeg" alt="">
+     </div>
+
+
+     <div class="contenedor_dp17_2_4_basico" id="contenedor_dp17_2_4_basico">
+        <div class="contenedor_img_sot_dp15">
+            <img id="sot-numero1-dp17_24_basico" src="" alt="">
+            <img id="sot-numero2-dp17_24_basico" src="" alt="">
+            <img id="sot-numero3-dp17_24_basico" src="" alt="">
+            <img id="sot-numero4-dp17_24_basico" src="" alt="">
+            <img id="sot-numero5-dp17_24_basico" src="" alt="">
+            <img id="sot-numero6-dp17_24_basico" src="" alt="">
+            <img id="sot-numero7-dp17_24_basico" src="" alt="">
+            <img id="sot-numero8-dp17_24_basico" src="" alt="">
+        </div>
+        <img src="./img/reportes/DP17_2_4_basico.jpeg" alt="">
+     </div>
+
+
+     <div class="contenedor_dp17_2_4_avanzado" id="contenedor_dp17_2_4_avanzado">
+        <div class="contenedor_img_sot_dp15">
+            <img id="sot-numero1-dp17_24_avanzado" src="" alt="">
+            <img id="sot-numero2-dp17_24_avanzado" src="" alt="">
+            <img id="sot-numero3-dp17_24_avanzado" src="" alt="">
+            <img id="sot-numero4-dp17_24_avanzado" src="" alt="">
+            <img id="sot-numero5-dp17_24_avanzado" src="" alt="">
+            <img id="sot-numero6-dp17_24_avanzado" src="" alt="">
+            <img id="sot-numero7-dp17_24_avanzado" src="" alt="">
+            <img id="sot-numero8-dp17_24_avanzado" src="" alt="">
+        </div>
+        <img src="./img/reportes/DP17_2_4_avanzado.jpeg" alt="">
+     </div>
+
+
+
+
+     <div class="contenedor_dp17_5g_basico" id="contenedor_dp17_5g_basico">
+        <div class="contenedor_img_sot_dp15">
+            <img id="sot-numero1-dp17_5g_basico" src="" alt="">
+            <img id="sot-numero2-dp17_5g_basico" src="" alt="">
+            <img id="sot-numero3-dp17_5g_basico" src="" alt="">
+            <img id="sot-numero4-dp17_5g_basico" src="" alt="">
+            <img id="sot-numero5-dp17_5g_basico" src="" alt="">
+            <img id="sot-numero6-dp17_5g_basico" src="" alt="">
+            <img id="sot-numero7-dp17_5g_basico" src="" alt="">
+            <img id="sot-numero8-dp17_5g_basico" src="" alt="">
+        </div>
+        <img src="./img/reportes/DP17_5G_basico.jpeg" alt="">
+     </div>
+
+
+     <div class="contenedor_dp17_5g_avanzado" id="contenedor_dp17_5g_avanzado">
+        <div class="contenedor_img_sot_dp15">
+            <img id="sot-numero1-dp17_5g_avanzado" src="" alt="">
+            <img id="sot-numero2-dp17_5g_avanzado" src="" alt="">
+            <img id="sot-numero3-dp17_5g_avanzado" src="" alt="">
+            <img id="sot-numero4-dp17_5g_avanzado" src="" alt="">
+            <img id="sot-numero5-dp17_5g_avanzado" src="" alt="">
+            <img id="sot-numero6-dp17_5g_avanzado" src="" alt="">
+            <img id="sot-numero7-dp17_5g_avanzado" src="" alt="">
+            <img id="sot-numero8-dp17_5g_avanzado" src="" alt="">
+        </div>
+        <img src="./img/reportes/DP17_5G_avanzado.jpeg" alt="">
+     </div>
+
+
+     <div class="contenedor_dp01" id="contenedor_dp01">
+        <div class="contenedor_img_sot_dp15">
+            <img id="sot-numero1-dp01" src="" alt="">
+            <img id="sot-numero2-dp01" src="" alt="">
+            <img id="sot-numero3-dp01" src="" alt="">
+            <img id="sot-numero4-dp01" src="" alt="">
+            <img id="sot-numero5-dp01" src="" alt="">
+            <img id="sot-numero6-dp01" src="" alt="">
+            <img id="sot-numero7-dp01" src="" alt="">
+            <img id="sot-numero8-dp01" src="" alt="">
+        </div>
+        <img src="./img/reportes/dp01.jpeg" alt="">
+     </div>
+
+
+
+     <div class="contenedor_dp03" id="contenedor_dp03">
+        <div class="contenedor_img_sot_dp15">
+            <img id="sot-numero1-dp03" src=" " alt="">
+            <img id="sot-numero2-dp03" src="" alt="">
+            <img id="sot-numero3-dp03" src="" alt="">
+            <img id="sot-numero4-dp03" src="" alt="">
+            <img id="sot-numero5-dp03" src="" alt="">
+            <img id="sot-numero6-dp03" src="" alt="">
+            <img id="sot-numero7-dp03" src="" alt="">
+            <img id="sot-numero8-dp03" src="" alt="">
+        </div>
+        <img id=""   src="./img/reportes/dp03.jpeg" alt="">
+     </div>
+
+
+     <div class="contenedor_dp40" id="contenedor_dp40">
+        <div class="contenedor_img_sot_dp15">
+            <img id="sot-numero1-dp40" src=" " alt="">
+            <img id="sot-numero2-dp40" src="" alt="">
+            <img id="sot-numero3-dp40" src="" alt="">
+            <img id="sot-numero4-dp40" src="" alt="">
+            <img id="sot-numero5-dp40" src="" alt="">
+            <img id="sot-numero6-dp40" src="" alt="">
+            <img id="sot-numero7-dp40" src="" alt="">
+            <img id="sot-numero8-dp40" src="" alt="">
+        </div>
+        <img src="./img/reportes/dp40.jpeg" alt="">
+     </div>
+
+
+     <div class="contenedor_dp41" id="contenedor_dp41">
+        <div class="contenedor_img_sot_dp15">
+            <img id="sot-numero1-dp41" src=" " alt="">
+            <img id="sot-numero2-dp41" src="" alt="">
+            <img id="sot-numero3-dp41" src="" alt="">
+            <img id="sot-numero4-dp41" src="" alt="">
+            <img id="sot-numero5-dp41" src="" alt="">
+            <img id="sot-numero6-dp41" src="" alt="">
+            <img id="sot-numero7-dp41" src="" alt="">
+            <img id="sot-numero8-dp41" src="" alt="">
+        </div>
+        <img src="./img/reportes/dp41.jpeg" alt="">
+     </div>
+
+     <div class="contenedor_dp27" id="contenedor_dp27">
+        <div class="contenedor_img_sot_dp15">
+            <img id="sot-numero1-dp27" src=" " alt="">
+            <img id="sot-numero2-dp27" src="" alt="">
+            <img id="sot-numero3-dp27" src="" alt="">
+            <img id="sot-numero4-dp27" src="" alt="">
+            <img id="sot-numero5-dp27" src="" alt="">
+            <img id="sot-numero6-dp27" src="" alt="">
+            <img id="sot-numero7-dp27" src="" alt="">
+            <img id="sot-numero8-dp27" src="" alt="">
+        </div>
+        <img src="./img/reportes/dp27.jpg" alt="">
+     </div>
+
+
+
+
+     <div class="contenedor_dp27" id="contenedor_dp27">
+        <div class="contenedor_img_sot_dp15">
+            <img id="sot-numero1-dp27" src=" " alt="">
+            <img id="sot-numero2-dp27" src="" alt="">
+            <img id="sot-numero3-dp27" src="" alt="">
+            <img id="sot-numero4-dp27" src="" alt="">
+            <img id="sot-numero5-dp27" src="" alt="">
+            <img id="sot-numero6-dp27" src="" alt="">
+            <img id="sot-numero7-dp27" src="" alt="">
+            <img id="sot-numero8-dp27" src="" alt="">
+        </div>
+        <img src="./img/reportes/dp27.jpg" alt="">
+     </div>
+
+
+    <script src="./js/index.js"></script>
+    <script src="./js/captura.js"></script>
+</body>
+</html>
